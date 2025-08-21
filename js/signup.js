@@ -22,6 +22,7 @@ function passmatch(pass,confirmpass){
     return true
   }else{
     console.log("password doesn't mtch");
+    return false;
     
   }
 
@@ -37,14 +38,18 @@ function applyUsernameRegex(usernamep){
 
     if(usernameRegex.test(usernamep)){
       nextspan(username,"green","username looks good ✅")
+  
 
     console.log("username match regex");
+        return true
     
   }else{
+    
           nextspan(username,"#E4A11B","Username must start with a letter,  _ ,contain number!")
 
 
     console.log("username doesnt match regex");
+    return false
     
   }
 
@@ -55,14 +60,16 @@ function applyPassRejex(pass){
 
   if(passregex.test(pass)){
     nextspan(password,"green ","good password ✅")
-
+   
 
     console.log("pass match regex");
+     return true;
     
    }else{
     nextspan(password,"#E4A11B ","password At least one uppercase letter (A–Z),lowercase letter (a–z), number, special character, min-lenght 8 chars 😃")
-
+ 
     console.log("pass doesnt match regex");
+      return false;
     
    }
 }
